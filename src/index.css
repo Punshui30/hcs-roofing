@@ -1,0 +1,147 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for all browsers */
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom focus styles */
+.focus\:ring-emerald-500:focus {
+  --tw-ring-color: rgb(16 185 129 / 0.5);
+}
+
+/* Phone number link styling */
+a[href^="tel:"] {
+  text-decoration: none;
+}
+
+/* Form styling improvements */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* Improved button hover effects */
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
+
+/* Custom shadow utilities */
+.shadow-xl {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover\:shadow-xl:hover {
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Mobile optimization */
+@media (max-width: 640px) {
+  /* Improve text readability on mobile */
+  body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  
+  /* Better spacing for mobile */
+  .space-y-8 > * + * {
+    margin-top: 1.5rem;
+  }
+  
+  .space-y-6 > * + * {
+    margin-top: 1rem;
+  }
+  
+  /* Improve button sizing on mobile */
+  button {
+    min-height: 44px; /* iOS recommended touch target */
+  }
+  
+  /* Better form inputs on mobile */
+  input, select, textarea {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 12px;
+  }
+  
+  /* Improve modal on mobile */
+  .fixed.inset-0 {
+    padding: 1rem;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .py-16 {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  
+  .gap-8 {
+    gap: 1.5rem;
+  }
+  
+  .rounded-lg {
+    border-radius: 0.5rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .bg-slate-900 {
+    background-color: #000;
+  }
+  
+  .text-slate-200 {
+    color: #fff;
+  }
+}
