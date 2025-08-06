@@ -1,12 +1,9 @@
 import emailjs from '@emailjs/browser';
 
-// EmailJS configuration
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
-
-// Initialize EmailJS
-emailjs.init(EMAILJS_PUBLIC_KEY);
+// EmailJS configuration - you'll need to set these up
+const EMAILJS_SERVICE_ID = 'your_service_id'; // Replace with your EmailJS service ID
+const EMAILJS_TEMPLATE_ID = 'your_template_id'; // Replace with your EmailJS template ID
+const EMAILJS_PUBLIC_KEY = 'your_public_key'; // Replace with your EmailJS public key
 
 export interface ContactFormData {
   name: string;
@@ -37,14 +34,14 @@ export const sendContactForm = async (formData: ContactFormData): Promise<boolea
       service: formData.service,
       timeframe: formData.timeframe,
       message: formData.message,
-      to_email: 'your-email@namecheap.com', // Replace with your Namecheap email
-      subject: `New Contact Form - ${formData.service}`,
+      to_email: 'contact@hcsroof.com'
     };
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
-      templateParams
+      templateParams,
+      EMAILJS_PUBLIC_KEY
     );
 
     console.log('Contact form sent successfully:', response);
@@ -62,20 +59,21 @@ export const sendLeadMagnet = async (formData: LeadMagnetData): Promise<boolean>
       from_email: formData.email,
       phone: formData.phone || 'Not provided',
       property_type: formData.propertyType || 'Not specified',
-      to_email: 'your-email@namecheap.com', // Replace with your Namecheap email
-      subject: 'New Lead Magnet Download - Free Roofing Guide',
+      lead_type: 'Free Roofing Guide Download',
+      to_email: 'contact@hcsroof.com'
     };
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
-      'YOUR_LEAD_TEMPLATE_ID', // Create a separate template for lead magnets
-      templateParams
+      'lead_magnet_template', // You'll need a separate template for lead magnets
+      templateParams,
+      EMAILJS_PUBLIC_KEY
     );
 
-    console.log('Lead magnet notification sent successfully:', response);
+    console.log('Lead magnet sent successfully:', response);
     return true;
   } catch (error) {
-    console.error('Error sending lead magnet notification:', error);
+    console.error('Error sending lead magnet:', error);
     return false;
   }
 };
@@ -84,20 +82,21 @@ export const sendEmailCapture = async (formData: EmailCaptureData): Promise<bool
   try {
     const templateParams = {
       from_email: formData.email,
-      to_email: 'your-email@namecheap.com', // Replace with your Namecheap email
-      subject: 'New Email Signup - Maintenance Guide',
+      signup_type: 'Newsletter Signup - Maintenance Guide',
+      to_email: 'contact@hcsroof.com'
     };
 
     const response = await emailjs.send(
       EMAILJS_SERVICE_ID,
-      'YOUR_EMAIL_TEMPLATE_ID', // Create a separate template for email signups
-      templateParams
+      'email_signup_template', // You'll need a separate template for email signups
+      templateParams,
+      EMAILJS_PUBLIC_KEY
     );
 
-    console.log('Email capture notification sent successfully:', response);
+    console.log('Email signup successful:', response);
     return true;
   } catch (error) {
-    console.error('Error sending email capture notification:', error);
+    console.error('Error with email signup:', error);
     return false;
   }
 };
