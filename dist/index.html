@@ -49,28 +49,99 @@
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "RoofingContractor",
+      "@type": ["RoofingContractor", "LocalBusiness", "HomeAndConstructionBusiness"],
       "name": "HCS Roofing & Windows",
       "description": "Expert roofing and window replacement services in Maryland",
       "url": "https://hcsroofingwindows.com",
       "telephone": "+1-410-746-7225",
+      "email": "contact@hcsroof.com",
       "address": {
         "@type": "PostalAddress",
+        "streetAddress": "Maryland",
         "addressRegion": "MD",
-        "addressCountry": "US"
+        "addressCountry": "US",
+        "addressLocality": "Maryland"
       },
       "geo": {
         "@type": "GeoCoordinates",
         "latitude": "39.0458",
         "longitude": "-76.6413"
       },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Pasadena",
+          "addressRegion": "MD"
+        },
+        {
+          "@type": "City", 
+          "name": "Annapolis",
+          "addressRegion": "MD"
+        },
+        {
+          "@type": "City",
+          "name": "Glen Burnie", 
+          "addressRegion": "MD"
+        },
+        {
+          "@type": "City",
+          "name": "Severna Park",
+          "addressRegion": "MD"
+        },
+        {
+          "@type": "City",
+          "name": "Laurel",
+          "addressRegion": "MD"
+        },
+        {
+          "@type": "City",
+          "name": "Silver Spring",
+          "addressRegion": "MD"
+        },
+        {
+          "@type": "City",
+          "name": "Ellicott City",
+          "addressRegion": "MD"
+        }
+      ],
       "openingHours": "Mo-Fr 07:00-18:00, Sa 08:00-16:00",
       "priceRange": "$$",
+      "paymentAccepted": ["Cash", "Check", "Credit Card", "Insurance"],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
-        "reviewCount": "127"
+        "reviewCount": "127",
+        "bestRating": "5",
+        "worstRating": "1"
       },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Sarah Johnson"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "HCS Roofing replaced our entire roof after storm damage. Professional, on-time, and the quality exceeded our expectations."
+        },
+        {
+          "@type": "Review", 
+          "author": {
+            "@type": "Person",
+            "name": "Mike Rodriguez"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Fair pricing, excellent workmanship, and they cleaned up everything perfectly. Our new windows look amazing."
+        }
+      ],
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
         "name": "Roofing Services",
@@ -79,29 +150,54 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "Roof Replacement"
-            }
+              "name": "Roof Replacement",
+              "description": "Complete roof replacement with premium materials and expert installation"
+            },
+            "areaServed": "Maryland"
           },
           {
             "@type": "Offer", 
             "itemOffered": {
               "@type": "Service",
-              "name": "Roof Repair"
-            }
+              "name": "Roof Repair", 
+              "description": "Fast, reliable roof repairs for storm damage, leaks, and wear"
+            },
+            "areaServed": "Maryland"
           },
           {
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service", 
-              "name": "Window Installation"
-            }
+              "name": "Window Installation",
+              "description": "Energy-efficient window replacements with professional installation"
+            },
+            "areaServed": "Maryland"
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Emergency Roof Repair",
+              "description": "24/7 emergency roofing services for urgent repairs"
+            },
+            "areaServed": "Maryland"
           }
         ]
-      }
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1DfFyDZhck/?mibextid=wwXIfr",
+        "https://www.instagram.com/h.c.s.baltimore?igsh=MXM4ODJzd2drdDQwMQ=="
+      ],
+      "founder": {
+        "@type": "Person",
+        "name": "HCS Roofing Team"
+      },
+      "foundingDate": "2009",
+      "slogan": "Maryland's Premier Roofing & Window Contractor"
     }
     </script>
-    <script type="module" crossorigin src="/assets/index-C0lK8Kw-.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-DXKgN-aU.css">
+    <script type="module" crossorigin src="/assets/index-COGxSDq6.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BrNKANO7.css">
   </head>
   <body>
     <div id="root"></div>
