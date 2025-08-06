@@ -1,7 +1,6 @@
 [build]
   publish = "dist"
-  command = "npm ci && npm run build"
-  functions = "netlify/functions"
+  command = "npm ci && npm audit fix --force || true && npm run build"
 
 [build.environment]
   NODE_VERSION = "18"
