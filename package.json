@@ -9,7 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generate-blog": "node scripts/generate-weekly-post.js",
-    "blog:preview": "npm run generate-blog && npm run dev"
+    "blog:preview": "npm run generate-blog && npm run dev",
+    "verify-build": "npm run build && echo 'Build verification successful'",
+    "deploy-check": "curl -s https://hcsroof.com | grep -q 'GTM-P9K8XB64' && echo 'GTM verified on live site'"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
