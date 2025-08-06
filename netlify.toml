@@ -1,9 +1,13 @@
 [build]
   publish = "dist"
-  command = "npm ci && npm audit fix --force || true && npm run build"
+  command = "npm install && npm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
 
 [[redirects]]
   from = "/blog/*"
